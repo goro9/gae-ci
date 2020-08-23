@@ -30,7 +30,7 @@ jobs:
     - name: install, build
       run: |
         yarn
-        gatsby build
+        yarn build
 
     - name: GAE deploy
       run: |
