@@ -42,5 +42,5 @@ jobs:
       run: |
         gcloud app deploy app.yaml --project ci-test-287307
 
-      env:
-        CI: true
+      # env:
+        # CI: true
