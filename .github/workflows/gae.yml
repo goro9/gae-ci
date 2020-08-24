@@ -32,6 +32,12 @@ jobs:
         yarn
         yarn build
 
+    - name: create certfile
+      run: |
+        echo '${{ secrets.GAE_DEPLOY_CERT }}' > cert.json
+        echo 'target service account' | gcloud auth activate-service-account --key-file cert.json
+        rm cert.json
+
     - name: GAE deploy
       run: |
         gcloud app deploy app.yaml --project ci-test-287307
